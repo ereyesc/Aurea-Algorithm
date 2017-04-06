@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body{
+  margin: 0;
+  padding: 0;
+}
+table {
+  font-family: 'Raleway', sans-serif;
+  color:#1B2630;
+  font-size: 36px;
+  font-weight: 100;
+  font-style: normal;
+  display: none;
+  margin: 0 auto;
+  width:80%;
+}
+td{
+  padding: 15px;
+}
+.header{
+  padding: 0;
+  margin: 0;
+  height: 100px;
+  width: 100%;
+  background-color: #E2E2E8;
+  background: linear-gradient(to bottom, rgb(226,226,232) 30%,rgba(0,0,0,0) 100%);
+}
