@@ -24,3 +24,7 @@ td{
   background-color: #E2E2E8;
   background: linear-gradient(to bottom, rgb(226,226,232) 30%,rgba(0,0,0,0) 100%);
 }
+.md-button.botones {
+    color: #616161 !important;
+    height: 40px !important;
+}

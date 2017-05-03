@@ -14,7 +14,7 @@ app.controller("aureaCtrl", function($scope) {
       var fnx2;
       var parser;
       var err;
-      $('tbody').unbind();
+      $('tbody').empty();
       $( "table" ).fadeOut( 0, function() {
         $( "tr" ).fadeOut(0);
       });
@@ -24,9 +24,11 @@ app.controller("aureaCtrl", function($scope) {
       x1 = xmin+d;
       x2 = xmax-d;
       fnx1 = string.replace(/x/g, x1);
-      console.log(parser.eval(fnx1));
+      fnx1=parser.eval(fnx1);
+      console.log("FNX1----"+fnx1);
       fnx2 = string.replace(/x/g, x2);
-      console.log(parser.eval(fnx2));
+      fnx2=parser.eval(fnx2);
+      console.log("FNX2----"+fnx2);
       if(fnx1>fnx2){
         xmin=x2;
       }else if(fnx2>fnx1){
@@ -43,8 +45,8 @@ app.controller("aureaCtrl", function($scope) {
       $('tbody').append("<td>"+Number(x2).toFixed(4)+"</td></tr>");
       $('tbody').append("<td>"+Number(xmin).toFixed(4)+"</td>");
       $('tbody').append("<td>"+Number(xmax).toFixed(4)+"</td>");
-      $('tbody').append("<td>"+parser.eval(fnx1).toFixed(4)+"</td>");
-      $('tbody').append("<td>"+parser.eval(fnx2).toFixed(4)+"</td>");
+      $('tbody').append("<td>"+fnx1.toFixed(4)+"</td>");
+      $('tbody').append("<td>"+fnx2.toFixed(4)+"</td>");
       $('tbody').append("<td>"+err.toFixed(7)+"</td>");
       }while(err>=0.000001);
 
@@ -52,6 +54,18 @@ app.controller("aureaCtrl", function($scope) {
         $( "tr" ).fadeIn( 5000 );
       });
 
+    };
+
+    $scope.clear = function(){
+      $('tbody').empty();
+      $( "table" ).fadeOut( 0, function() {
+        $( "tr" ).fadeOut(0);
+      });
+      $scope.form = {
+          function:'',
+          xmin:'',
+          xmax:''
+      };
     };
 });
 
